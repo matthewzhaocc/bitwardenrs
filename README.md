@@ -1,0 +1,2 @@
+# bitwardenrs
+bitwardenrs server manifests
