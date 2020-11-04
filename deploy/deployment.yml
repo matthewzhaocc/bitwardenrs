@@ -16,8 +16,11 @@ spec:
         name: bw
         imagePullPolicy: Always
         env:
-            - name: EULA
-              value: "TRUE"
+            - name: ADMIN_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: bw-token
+                  key: bw-token
       volumes:
         - name: bw-data
           persistentVolumeClaim:
