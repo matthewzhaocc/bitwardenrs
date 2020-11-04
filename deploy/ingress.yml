@@ -4,6 +4,7 @@ metadata:
   name: bw-ingress
   annotations:
     cert-manager.io/cluster-issuer: cf-dns
+    kubernetes.io/ingress.class: ambassador
 spec:
   rules:
   - http:
