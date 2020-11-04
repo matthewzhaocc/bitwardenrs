@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bw
+spec:
+  selector:
+    matchLabels:
+      app: bw
+  template:
+    metadata:
+      labels:
+        app: bw
+    spec:
+      containers:
+      - image: bitwardenrs/server:latest
+        name: bw
+        imagePullPolicy: Always
+        env:
+            - name: EULA
+              value: "TRUE"
+      volumes:
+        - name: bw-data
+          persistentVolumeClaim:
+            claimName: bw-pvc
