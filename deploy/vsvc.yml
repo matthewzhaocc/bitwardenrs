@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bw-vsvc
+spec:
+  gateways:
+  - bw-gateway
+  hosts:
+  - bitwarden.matthew-cloud.com
+  http:
+  - name: primary
+    route:
+    - destination:
+        host: bw-svc
+      weight: 100
