@@ -11,5 +11,5 @@ spec:
   - name: primary
     route:
     - destination:
-        host: bw-svc
+        host: bw-service
       weight: 100
