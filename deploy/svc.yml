@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-    name: mc-service
+    name: bw-service
 spec:
     selector:
-        app: mc
+        app: bw
     ports:
         - protocol: TCP
           port: 80
