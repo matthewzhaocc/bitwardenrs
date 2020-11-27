@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+          name: ingress-cert 
+            spec:
+                secretName: ingress-cert
+                commonName: bitwarden.matthew-cloud.com
+                dnsNames:
+                    - bitwarden.matthew-cloud.com
+                issuerRef:
+                    name: cf-dns
+                    kind: ClusterIssuer
+                    group: cert-manager.io
